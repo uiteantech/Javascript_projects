@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="yes">Change me with the help of setTimeOut</h1>
+    <button id="btn">Stop</button>
+</body>
+<script>
+
+   const click=function(){
+    document.getElementById('yes').innerText="Hy Developer"
+   }
+
+           const out_function=setTimeout(click,2000)
+
+
+       document.querySelector('#btn').addEventListener('click',function(){
+        clearTimeout(out_function)
+        console.log("Done")
+       })
+</script>
+</html>
