@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 style="padding-left: 100px;">Hello World</h1>
+    <div style="padding-left: 140px;">
+        <button id="one">Start</button>
+    <button id="two">Stop</button>
+    </div>
+    
+</body>
+ 
+  <script>
+    let stop_it;
+   const take_ref=function(){
+
+    let hex='123456789ABCDEF'
+    let color='#'
+    for(let i=0;i<6;i++){
+        color+=hex[Math.floor(Math.random()*16)];
+    }
+     return color;
+
+   }
+
+      function colorchanger(){
+     
+        let change_color=function(){
+            document.body.style.backgroundColor=take_ref()
+         } 
+
+        if(!stop_it){
+            stop_it =setInterval(change_color,1000)
+        }
+
+    }
+
+    function stopcolorchanger(){
+     clearInterval(stop_it)
+     stop_it=null
+    }
+   
+     document.getElementById('one').addEventListener('click',colorchanger)
+     document.getElementById('two').addEventListener('click',stopcolorchanger)
+ 
+  </script>
+
+
+
+</html>
